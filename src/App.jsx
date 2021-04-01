@@ -2,16 +2,14 @@ import "./pages/Welcome";
 import "./pages/ListOfParcels";
 import "./pages/ParcelDetails";
 import React from 'react'
+import Welcome from "./pages/Welcome";
 
 export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="#" alt="Welcome-img"/>
-        <h1>Parcel tracker</h1>
-        <p>Enter your parcel id to start</p>
+        <Welcome />
 
-        <input placeholder="Search by parcel id" type="text"/>
       </header>
 
 
