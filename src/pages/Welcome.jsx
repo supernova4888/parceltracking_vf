@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import ParcelCard from "../components/ParcelCard";
 import ParcelResult from "./ParcelResult";
 
 // Welcome page has a search bar, that calls 'link' to the other page where the 'fetch-parcelid-match' data is shown

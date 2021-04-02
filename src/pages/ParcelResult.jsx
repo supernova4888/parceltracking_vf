@@ -7,6 +7,8 @@ export default function ParcelResult({data}) {
 
     return (
         <div>
+
+        {/* add a if in case the data is empty - check Eduardos video */}
         {parcelArray}
         </div>
     )
