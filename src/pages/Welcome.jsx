@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
+import ParcelCard from "../components/ParcelCard";
+import ParcelResult from "./ParcelResult";
 
 // Welcome page has a search bar, that calls 'link' to the other page where the 'fetch-parcelid-match' data is shown
 
@@ -9,7 +11,7 @@ const [status, setStatus] = useState(0);
 const [parcels, setParcels] = useState([]);
 
 // Constants
-const API_URL = "https://jsonplaceholder.typicode.com/todos/1";
+const API_URL = "https://jsonplaceholder.typicode.com/todos";
 
 // Methods
 // query the data and pass to JSON format
@@ -21,7 +23,9 @@ useEffect(() => {
 }, [setParcels, setStatus]);
 
 function onFetchSuccess(json) {
+    // this might not be working
     setParcels(json);
+    console.log(json);
     setStatus(1);
 }
 
@@ -29,15 +33,21 @@ function onFetchFail(error){
     console.log("Error", error);
     setStatus(2);
 }
-
+    
     return (
         <div className="Welcome-page">
         {/* Update to logoURL */}
         <img src="#" alt="Welcome-img"/>
         <h1>Parcel tracker</h1>
+
+        {status === 1 && <ParcelResult data={parcels} />}
+
+
         
-        
-        <h2>{parcels.title}</h2>
+        {/* {status === 1 && <ParcelResult parcels={parcels} />}
+
+        <span>{ParcelResult.title}</span> */}
+
 
         {/* Search button to be added - check Youtube assignment */}
         {/* {status === 0 && <p> Loading... </p>}
@@ -46,4 +56,5 @@ function onFetchFail(error){
 
         </div>
     );
+    
 }
