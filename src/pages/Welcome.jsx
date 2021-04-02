@@ -1,44 +1,47 @@
 import React from 'react'
 import Tracker from "../components/Tracker";
-import { useState , useHistory} from "react";
+import { useState, useEffect } from "react";
 
 // Welcome page has a search bar, that calls 'link' to the other page where the 'fetch-parcelid-match' data is shown
 
 export default function Welcome() {
 // State
-const [query, setQuery] = useState("");
+const [status, setStatus] = useState(0);
+const [parcels, setParcels] = useState([]);
 
-// Property
-//const logoObject = require (...);
-//const logoURL = logoObject.default;
-// for being able to return to the previous page
-const history = useHistory();
+// Constants
+const API_URL = "https://jsonplaceholder.typicode.com/todos/1";
 
 // Methods
-function onSearch(event) {
-    event.preventDefault();
-    // confirm what this line does
-    history.push(`/results/${query}`);
+// query the data and pass to JSON format
+useEffect(() => {
+    fetch(API_URL)
+    .then((response) => response.json())
+    .then((json) => onFetchSuccess(json))
+    .catch((error) => onFetchFail(error));
+}, [setParcels, setStatus]);
+
+function onFetchSucess(json) {
+    setParcels(json);
+    setStatus(1);
+}
+
+function onFetchFail(error){
+    console.log("Error", error);
+    setStatus(2);
 }
 
     return (
-        <div>
+        <div className="Welcome-page">
         {/* Update to logoURL */}
         <img src="#" alt="Welcome-img"/>
         <h1>Parcel tracker</h1>
 
-        {/* Search bar */}
-        <p>Enter your parcel id to start</p>
-        <input  type="text"/>
-        <form onSubmit={onSearch} className="search-bar">
-            <input type="text" placeholder="Search by parcel id" value={query} 
-            onChange={(event) => setQuery(event.target.value)} />
-            <input type="submit" value="Search"/>
-        
-        </form>
-
-        <Tracker />
+        {/* Search button to be added - check Youtube assignment */}
+        {status === 0 && <p> Loading... </p>}
+        {status === 1 && <ParcelResult parcel={parcels} />}
+        {status === 2 && <p> Error, please check your connection and try again... </p>}
 
         </div>
-    )
+    );
 }
