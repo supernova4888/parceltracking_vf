@@ -1,8 +1,8 @@
 import "./pages/Welcome";
-import "./pages/ListOfParcels";
-import "./pages/ParcelDetails";
-import React from 'react'
+import ListOfParcels from "./pages/ListOfParcels";
+import ParcelDetails from "./pages/ParcelDetails";
 import Welcome from "./pages/Welcome";
+import React from 'react'
 
 export default function App() {
   return (
