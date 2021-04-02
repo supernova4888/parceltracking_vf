@@ -1,10 +1,11 @@
 // Search Results
+import Welcome from "./Welcome";
 import React from 'react'
 
-export default function ParcelResult({parcel}) {
+export default function ParcelResult({parcels}) {
     return (
         <div>
-            {parcel.map(parcels => (<h1 key={parcel.id}>{parcel.status}</h1>))}
+            console.log(parcels);
         </div>
     )
 }

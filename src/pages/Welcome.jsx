@@ -35,11 +35,14 @@ function onFetchFail(error){
         {/* Update to logoURL */}
         <img src="#" alt="Welcome-img"/>
         <h1>Parcel tracker</h1>
+        
+        
+        <h2>{parcels.title}</h2>
 
         {/* Search button to be added - check Youtube assignment */}
-        {status === 0 && <p> Loading... </p>}
-        {status === 1 && <ParcelResult parcel={parcels} />}
-        {status === 2 && <p> Error, please check your connection and try again... </p>}
+        {/* {status === 0 && <p> Loading... </p>}
+        {status === 1 && <ParcelResult parcels={parcels} />}
+        {status === 2 && <p> Error, please check your connection and try again... </p>} */}
 
         </div>
     );
