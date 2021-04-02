@@ -1,5 +1,4 @@
 import React from 'react'
-import Tracker from "../components/Tracker";
 import { useState, useEffect } from "react";
 
 // Welcome page has a search bar, that calls 'link' to the other page where the 'fetch-parcelid-match' data is shown
@@ -21,7 +20,7 @@ useEffect(() => {
     .catch((error) => onFetchFail(error));
 }, [setParcels, setStatus]);
 
-function onFetchSucess(json) {
+function onFetchSuccess(json) {
     setParcels(json);
     setStatus(1);
 }
