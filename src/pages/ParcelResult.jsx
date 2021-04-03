@@ -1,12 +1,11 @@
 // Search Results
 import React from 'react'
 
-export default function ParcelResult({data}) {
+export default function ParcelResult({data, searchedParcel}) {
     const parcelArray = data.map((item) => <li key={item.id}>{item.title}</li>);
 
     // dummy variable to "find"
-    const searchedParcel = "et porro tempora";
-    // et porro tempora
+    //const searchedParcel = "et porro tempora";
 
     // use data.find to find it in the data array
     const findSearchedParcel = data.find((item) => item.title === searchedParcel);

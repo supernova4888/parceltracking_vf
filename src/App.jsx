@@ -1,5 +1,4 @@
-import Home from "./pages/FetchData";
-import ParcelResult from "./pages/ParcelResult";
+import Home from "./pages/Home"
 import React from 'react'
 
 export default function App() {
