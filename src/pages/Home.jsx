@@ -1,11 +1,13 @@
 import React from 'react'
-import { useState } from "react";
+import { useState} from "react";
 import ParcelResult from './ParcelResult';
 import FetchData from './FetchData';
 
 // This is the landing page with search field. It should contain a router to the next page.
 
 export default function Home() {
+
+const [query , setQuery] = useState("");
 
 // State
 function onSearch(event) { 
