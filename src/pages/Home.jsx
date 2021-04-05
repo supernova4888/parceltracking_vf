@@ -1,39 +1,34 @@
 import React from 'react'
 import { useState } from "react";
 import ParcelResult from './ParcelResult';
+import FetchData from './FetchData';
 
 // This is the landing page with search field. It should contain a router to the next page.
 
 export default function Home() {
-const [parcelid, setParcelId] = useState("");
 
-// function onSubscribe(event){
-//     event.preventDefault();
-//     <ParcelResult searchedParcel = {parcelid} />;
-// }
-
-function onName(event) {
-    setParcelId(event.target.value);
+// State
+function onSearch(event) { 
+    event.preventDefault();
+   <ParcelResult input={query} />
 }
 
 
-    return (
-        <div>
+return (
+     <div className="search">
             <h1>Parcel tracker</h1>
-            {/* Input form and search button -> should send the input info to the 'Parcel Result page' */}
+             {/* Input form and search button -> should send the input info to the 'Parcel Result page' */}
 
-            {/* This is connected to the button */}
-            <form>
-                <input type="text" value={parcelid} onChange={(event) => onName(event)}/>
-
-                <button>Search</button>
-
-
+            {/* This is connected to the button  - To group tags*/}
+            <form onSubmit={onSearch}>
+                <input 
+                type="text" 
+                value={query} 
+                onChange={(event) => setQuery(event.target.value)} />
+                {/* To fire the event */}
+                <input type="submit" value="Search" />
             </form>
 
-
-            {/* Router to the Parcel Result page */}
         </div>
     )
 }
-

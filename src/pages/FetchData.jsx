@@ -4,6 +4,7 @@ import ParcelResult from "./ParcelResult";
 
 export default function FetchData() {
 // State
+// update to Recoil format
 const [status, setStatus] = useState(0);
 const [parcels, setParcels] = useState([]);
 
@@ -21,7 +22,6 @@ useEffect(() => {
 
 function onFetchSuccess(json) {
     setParcels(json);
-    console.log(json);
     setStatus(1);
 }
 
@@ -29,7 +29,9 @@ function onFetchFail(error){
     console.log("Error", error);
     setStatus(2);
 }
-    
+
+console.log(parcels);
+
     return (
        <div className="#">
 
@@ -38,11 +40,8 @@ function onFetchFail(error){
         {status === 1 && <ParcelResult data={parcels} />}
         {status === 2 && <p> Error, please check your connection and try again... </p>}
 
-        {/* Search button to be added - check Youtube assignment */}
+        { /* THIS IS NOT WORKING <ParcelResult /> - Send this data to Home first - I can't make two calls to the same page. Parcel result doesnt wait for one or the other*/}
         
-
-
-
         </div>
     );
     
