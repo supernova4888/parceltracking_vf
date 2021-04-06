@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Package Tracker Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+@Author: Diana Bao
 
-## Available Scripts
+## General information
 
-In the project directory, you can run:
+> Description: This package tracker web app was developed by Diana in order to simulate the exercise of a case for a job interview. The main purpose of the app is simulate a customer facing parcel tracker.
 
-### `npm start`
+    ### Functionalities
+    > Search using User Name (that can be easily adapted to parcel ID)
+    > Fetch parcel data from API mockaroo
+    > Display all parcels details
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> How the app works: The user (customer) enter his/her name and lastname, which triggers the API to fetch and load all parcels and its details connected to that user. Parcel details include: sender name, ETA, pick up location and status.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> Project setup: Assumptions were made based on the information received. Project was conducted with React, JS, HTML and CSS. A sketch of the app was made to guide the development of the functional requirements.
 
-### `npm test`
+> Improvements and limitations: The data provided contained some limitation such as 1) it did not contain an unique parcel ID for each parcel 2) The data pertained only one user. Potential improvement suggestions include developing a login or key for the user so that the parcel information can be saved accordingly, integrating automatic language conversion based on the IP of the app visitor and improve the data by implementing control parameters such as unique parcel ID.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> External dependencies: API mockaroo and React.
 
-### `npm run build`
+## Testing strategy and approach
+> In connection to the suggested improvements above a testing strategy should be in place. Testing should include unit testing with Jest as well as user testing so that vulnerabilities and critical features can be identified.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to deploy the app
+1. Download or clone the project from GitHub
+2. Open the project in the IDE/editor of your choice
+3. Confirm that npm/npx and relevant packages are installed
+4. Run the program by typing "npm start" in the terminal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits
+> Eduardo Alvarez - Lecturer/TA - KTH
+> Abdul Aziz Alkathiri - TA - KTH
+> Novare Potential
+> Images credits: Freepik from flaticon.com and background image from Instabox's website.
