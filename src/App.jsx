@@ -1,17 +1,20 @@
-import Nav from "./components/Nav";
-import React from 'react'
-import FetchData from "./pages/FetchData";
-import ParcelResult from "./pages/ParcelResult";
-import Home from "./pages/Home";
+import { Nav } from "./components/Nav";
+import { Home } from "./pages/Home";
+import { ParcelResult } from "./components/ParcelResult";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// TODO import styles
 
 export default function App() {
   
   return (  
     <div className="App">
-    
-    {/* <Nav /> */}
-    {/* Recoil root: to define the global variables - WRAPS ALL parent or child that needs access to the global state*/}
-    <Home />
+      <Router>
+        <Nav />
+        <Switch>
+          <Route component={Home} path="/" exact />
+					<Route component={ParcelResult} path="/parcelresults/:query" />
+        </Switch>
+      </Router>
     </div>
   );
 }

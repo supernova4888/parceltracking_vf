@@ -1,18 +1,19 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import ParcelResult from "./ParcelResult";
+import { ParcelResult } from "../components/ParcelResult";
 
-export default function FetchData() {
+export default function FetchData ({match}) {
 // State
-// update to Recoil format
+const info = match.params.query;
+let parcelID = info.split(":")[1];
 const [status, setStatus] = useState(0);
+// const [data, setData] = useState([]);
 const [parcels, setParcels] = useState([]);
 
 // Constants
 const API_URL = "https://jsonplaceholder.typicode.com/todos";
 
-// Methods
-// query the data and pass to JSON format
+// Methods - query the data and pass to JSON format
 useEffect(() => {
     fetch(API_URL)
     .then((response) => response.json())
@@ -30,19 +31,22 @@ function onFetchFail(error){
     setStatus(2);
 }
 
-console.log(parcels);
+const filteredList = parcels.filter(item => item )
 
     return (
-       <div className="#">
+       <div>
 
-        {/* Saves fetched data from server into the ParcelResult page */}
-        {status === 0 && <p> Loading... </p>}
+        {/* {status === 0 && <p> Loading... </p>}
         {status === 1 && <Home data={parcels} />}
         {status === 2 && <p> Error, please check your connection and try again... </p>}
+       */}
+        {filteredList.map(parcel => (
+        <ParcelResult key={parcel.id} item={parcel}/>
+	))}
 
-        { /* THIS IS NOT WORKING <ParcelResult /> - Send this data to Home first - I can't make two calls to the same page. Parcel result doesnt wait for one or the other*/}
         
         </div>
     );
     
 }
+

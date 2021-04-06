@@ -1,16 +1,12 @@
-// Search Results
 import React from 'react'
-import { useState, useEffect } from "react";
-import FetchData from "./FetchData";
+import { ParcelCard } from "./ParcelCard";
 
 
-export default function ParcelResult({data}) {
+export const ParcelResult = ({ item }) => {
     //const parcelArray = data.map((item) => <li key={item.id}>{item.title}</li>);
 
     // dummy variable to "find"
     //const searchedParcel = "et porro tempora";
-
-    console.log(data);
 
     // the error seems to be here
     // const findSearchedParcel = data.find((item) => item.title === query);
@@ -22,6 +18,12 @@ export default function ParcelResult({data}) {
 
     return (
         <div>
+            <item>
+
+				<h1>{`resultCards.parcelID`}: {item.parcel_id}</h1>
+				<h2>Status: {`resultCards.status.${item.status}`}</h2>
+				<h2>{`resultCards.from`}: {item.sender}</h2>
+			</item>
 
         {/* { !(findSearchedParcel === undefined) && <div>{findSearchedParcel.title}</div>}
 

@@ -1,14 +1,9 @@
 import React from 'react'
-import { Link } from "react-router-dom";
-import Home from '../pages/Home';
 
-export default function Nav() {
+export const Nav = () => {
     return (
-        <header className="Nav">
-{/*         
-        <Link to="/">Home</Link>
-        <Link to="./ParcelResult">Parcel Result</Link> */}
-
+        <header className="Nav">    
+        
         <img src="#" alt=""/> 
         
         </header>
