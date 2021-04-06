@@ -5,14 +5,18 @@
     margin-top: 50px;
 }
 
-.home-search h1 {
+.hometext {
+    display: grid;
+    place-items: center;
+}
+
+.hometext h1 {
     font-size: 30px;
 }
 
-.home-search p {
+.hometext p {
     font-size: 15px;
     font-weight: bold;
-    text-shadow: color whitesmoke;
 }
 
 .home-search img {
@@ -22,10 +26,75 @@
 }
 
 @media only screen and (min-width: 500px) {
+.hometext {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.hometext h1 {
+    font-size: 40px;
+}
+
+.hometext p {
+    font-size: 25px;
+}
+
+.home-search img {
+    width: 20%;
+    height: auto;
+    
+}
 }
 
 @media only screen and (min-width: 660px) {
+.hometext h1 {
+    font-size: 50px;
+}
+
+.hometext p {
+    font-size: 35px;
+}
+
+.home-search img {
+    width: 15%;
+    height: auto;
+}
+
+.inputfields .input {
+    height: 30px;
+    width: 300px;
+}
+
 }
 
 @media only screen and (min-width: 900px) {
+.hometext {
+    display: grid;
+    place-items: center;
+    max-width: 50%;
+}
+
+.hometext h1 {
+    font-size: 80px;
+}
+
+.hometext .line {
+    font-size: 35px;
+    margin-bottom: 60px;
+}
+
+.home-search img {
+    width: 10%;
+    height: auto;
+    
+}
+.inputfields .input {
+    height: 35px;
+    width: 300px;
+}
+
+.inputfields button {
+height: 40px;
+width: 80px;
+}
 }

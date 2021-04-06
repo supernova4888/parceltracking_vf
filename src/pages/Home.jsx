@@ -25,12 +25,14 @@ const handleChange = ({ target }) => {
 
 return (
     <div className="home-search">
-        <img src={imgLogo} alt="box"/>
+        <img src={imgLogo} alt="tracker"/>
+            <div className="hometext">
             <h1>Parcel tracker</h1>
-            <p>Welcome to our prototype version! Use yourname and lastname to start.</p>
+            <p className="line">Welcome to our prototype version! Use yourname and lastname to start.</p>
+            </div>
             <div className="inputfields">
             <form onSubmit={handleSubmit}>
-                <input 
+                <input className="input"
                     placeholder="[Name] [Lastname]"
 					name="userName"
 					value={query.userName}

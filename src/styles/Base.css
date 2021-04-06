@@ -7,8 +7,37 @@ body {
   
 }
 
+@media only screen and (min-width: 500px) {
+    body {
+        background-image: url("../assets/background_mw500px.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #FB4646;
+    }
+}
+
+@media only screen and (min-width: 660px) {
+    body {
+        background-image: url("../assets/background_mw660px.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #FB4646;
+    }
+    
+}
+
+@media only screen and (min-width: 900px) {
+    body {
+        background-image: url("../assets/background_mw900px.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #FB4646;
+    }
+}
+
+
 .App {
-  background-color: none;
+  background-color:none;
   color: #212121;
   font-family: 'Roboto', sans-serif;
 }

@@ -22,7 +22,7 @@ console.log(filteredList.length);
     <div className="resultlist">
     <h1 className="yourparcels">Your parcels</h1>
     {(filteredList.length>0 && mappedFilteredList) ||
-    (filteredList.length===0 && <div>Sorry, no boxes for you.</div>)}
+    (filteredList.length===0 && <div className="sorry">Sorry, no boxes for you :(</div>)}
     </div>
     );
 }
