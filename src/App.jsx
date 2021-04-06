@@ -6,12 +6,11 @@ import {useState, useEffect} from 'react'
 // TODO import styles
 
 export default function App() {
-
+// Constants
 const [status, setStatus] = useState(0);
 const [parcels, setParcels] = useState([]);
-
-// Constants
-const API_URL = "https://jsonplaceholder.typicode.com/todos";
+const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
+//"https://jsonplaceholder.typicode.com/todos/";
 
 // Methods - query the data and pass to JSON format
 useEffect(() => {
@@ -25,7 +24,6 @@ function onFetchSuccess(json) {
     setParcels(json);
     setStatus(1);
 }
-
 function onFetchFail(error){
     console.log("Error", error);
     setStatus(2);

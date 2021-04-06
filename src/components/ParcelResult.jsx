@@ -2,18 +2,19 @@ import React from 'react'
 //import { ParcelCard } from "./ParcelCard";
 
 export const ParcelResult = ( {item, match} ) => {
-const parcelID = match.params.query.split(":")[1]
+// code made to search for a specific parcel based on unique parcel ID. Since that data is not avaialable, the search parameter chosen is user name.
+const userName = match.params.query
 console.log(item)
-console.log("parcelID",parcelID)
-const filteredList = item.filter(item => item.userId == parcelID )
+console.log("userName:",userName)
+const filteredList = item.filter(item => item.user_name == userName )
 console.log("f",filteredList)
 
-// why this map is here? because we need to return the data, react doesnt render it if we don't return it. I can wrap the details in the ParcelCard - but risk breaking the info flow again
 const mappedFilteredList = filteredList.map(parcel => {
     return (<div key={parcel.id}>
-    <p>{parcel.title}</p>
     <p>{parcel.status}</p>
     <p>{parcel.sender}</p>
+    <p>{parcel.eta.split("T")[0]}</p>
+    <p>{parcel.location_name}</p>
     </div>)
 });
 console.log(filteredList);
@@ -21,14 +22,9 @@ console.log(filteredList);
 
     return (
     <div>
-    
+    <h1>Your parcels</h1>
 	{mappedFilteredList}
-
-        {/* if list is empty then display another message */}
-
-        {/* { !(findSearchedParcel === undefined) && <div>{findSearchedParcel.title}</div>}
-
-        {findSearchedParcel === undefined && <div>Not Found</div>} */}
-        </div>
+    {mappedFilteredList === undefined && <div>Not Found, please try again later.</div>}
+    </div>
     );
-    }
+}
