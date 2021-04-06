@@ -1,37 +1,34 @@
 import React from 'react'
 //import { ParcelCard } from "./ParcelCard";
 
+export const ParcelResult = ( {item, match} ) => {
+const parcelID = match.params.query.split(":")[1]
+console.log(item)
+console.log("parcelID",parcelID)
+const filteredList = item.filter(item => item.userId == parcelID )
+console.log("f",filteredList)
 
-export const ParcelResult = ( props ) => {
-    
-    console.log(props);
-    //const parcelArray = data.map((item) => <li key={item.id}>{item.title}</li>);
-
-    // dummy variable to "find"
-    //const searchedParcel = "et porro tempora";
-
-    // the error seems to be here
-    
-    //const findSearchedParcel = data.find((item) => item.title === query);
-
-    // The found item is printed to the clg
-    //console.log(input);
-    //console.log(findSearchedParcel);
+// why this map is here? because we need to return the data, react doesnt render it if we don't return it. I can wrap the details in the ParcelCard - but risk breaking the info flow again
+const mappedFilteredList = filteredList.map(parcel => {
+    return (<div key={parcel.id}>
+    <p>{parcel.title}</p>
+    <p>{parcel.status}</p>
+    <p>{parcel.sender}</p>
+    </div>)
+});
+console.log(filteredList);
 
 
     return (
-        <div>
+    <div>
     
-		{/* <h1>{item.parcel_id}</h1> */}
-	
+	{mappedFilteredList}
+
+        {/* if list is empty then display another message */}
 
         {/* { !(findSearchedParcel === undefined) && <div>{findSearchedParcel.title}</div>}
 
         {findSearchedParcel === undefined && <div>Not Found</div>} */}
-
-        {/* pull the card component and fill with the info and display */}
-
         </div>
-
     );
     }
