@@ -2,7 +2,7 @@ import Nav from "./components/Nav";
 import React from 'react'
 import FetchData from "./pages/FetchData";
 import ParcelResult from "./pages/ParcelResult";
-import Home from "./Home";
+import Home from "./pages/Home";
 
 export default function App() {
   

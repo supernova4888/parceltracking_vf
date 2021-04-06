@@ -13,7 +13,7 @@ export default function ParcelResult({data}) {
     console.log(data);
 
     // the error seems to be here
-    const findSearchedParcel = data.find((item) => item.title === query);
+    // const findSearchedParcel = data.find((item) => item.title === query);
 
     // The found item is printed to the clg
     //console.log(input);
@@ -23,13 +23,13 @@ export default function ParcelResult({data}) {
     return (
         <div>
 
-        { !(findSearchedParcel === undefined) && <div>{findSearchedParcel.title}</div>}
+        {/* { !(findSearchedParcel === undefined) && <div>{findSearchedParcel.title}</div>}
 
-        {findSearchedParcel === undefined && <div>Not Found</div>}
+        {findSearchedParcel === undefined && <div>Not Found</div>} */}
 
         {/* pull the card component and fill with the info and display */}
 
         </div>
 
     );
-} 
+    }

@@ -37,7 +37,7 @@ console.log(parcels);
 
         {/* Saves fetched data from server into the ParcelResult page */}
         {status === 0 && <p> Loading... </p>}
-        {status === 1 && <ParcelResult data={parcels} />}
+        {status === 1 && <Home data={parcels} />}
         {status === 2 && <p> Error, please check your connection and try again... </p>}
 
         { /* THIS IS NOT WORKING <ParcelResult /> - Send this data to Home first - I can't make two calls to the same page. Parcel result doesnt wait for one or the other*/}

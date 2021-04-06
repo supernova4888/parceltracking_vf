@@ -1,20 +1,27 @@
 import React from 'react'
 import { useState} from "react";
-import ParcelResult from './ParcelResult';
-import FetchData from './FetchData';
-
-// This is the landing page with search field. It should contain a router to the next page.
+import { useHistory } from "react-router-dom";
 
 export default function Home() {
 
-const [query , setQuery] = useState("");
-
 // State
-function onSearch(event) { 
-    event.preventDefault();
-   <ParcelResult input={query} />
-}
+const [query , setQuery] = useState({
+    senderName: "",
+    parcelID: "",
+});
 
+// Property
+const history = useHistory();
+
+//Functions
+const handleSubmit = (e) => {
+		e.preventDefault();
+		history.push(`/searchresults/${query.senderName}:${query.parcelID}`);
+	};
+
+function search(data){
+    return data.find((item) => item.title.toLowerCase() === query);
+}
 
 return (
      <div className="search">
@@ -22,14 +29,14 @@ return (
              {/* Input form and search button -> should send the input info to the 'Parcel Result page' */}
 
             {/* This is connected to the button  - To group tags*/}
-            <form onSubmit={onSearch}>
+
                 <input 
                 type="text" 
                 value={query} 
                 onChange={(event) => setQuery(event.target.value)} />
                 {/* To fire the event */}
                 <input type="submit" value="Search" />
-            </form>
+   
 
         </div>
     )
