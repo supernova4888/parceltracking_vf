@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 
 export const Home = () => {
 // State
+const imgURL = require("../assets/tracking.png");
+const imgLogo = imgURL.default;
 const [query , setQuery] = useState({
     userName: ""
 });
@@ -22,9 +24,11 @@ const handleChange = ({ target }) => {
 	};
 
 return (
-    <div className="Home-search">
+    <div className="home-search">
+        <img src={imgLogo} alt="box"/>
             <h1>Parcel tracker</h1>
-            <p>Welcome to the prototype version! Log in with name and lastname to find your parcels.</p>
+            <p>Welcome to our prototype version! Use yourname and lastname to start.</p>
+            <div className="inputfields">
             <form onSubmit={handleSubmit}>
                 <input 
                     placeholder="[Name] [Lastname]"
@@ -34,6 +38,7 @@ return (
                 />
             <button>Search</button>
             </form>
-        </div>
+            </div>
+    </div>
     )
 }

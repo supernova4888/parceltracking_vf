@@ -1,0 +1,31 @@
+.home-search {
+    background-color:none;
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+}
+
+.home-search h1 {
+    font-size: 30px;
+}
+
+.home-search p {
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: color whitesmoke;
+}
+
+.home-search img {
+    width: 30%;
+    height: auto;
+    
+}
+
+@media only screen and (min-width: 500px) {
+}
+
+@media only screen and (min-width: 660px) {
+}
+
+@media only screen and (min-width: 900px) {
+}

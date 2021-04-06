@@ -1,12 +1,12 @@
-import { Nav } from "./components/Nav";
 import { Home } from "./pages/Home";
 import { ParcelResult } from "./components/ParcelResult";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {useState, useEffect} from 'react'
-// TODO import styles
+import "./styles/styles.css";
 
 export default function App() {
 // Constants
+// eslint-disable-next-line
 const [status, setStatus] = useState(0);
 const [parcels, setParcels] = useState([]);
 const API_URL = "https://my.api.mockaroo.com/orders.json?key=e49e6840";
@@ -31,8 +31,7 @@ function onFetchFail(error){
 
   return (  
     <div className="App">
-      <Router>
-        <Nav />
+      <Router>  
         <Switch>
           <Route component={Home} path="/" exact />
           <Route render={(props) => <ParcelResult match={props.match} item={parcels}/>} 

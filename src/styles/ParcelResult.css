@@ -1,0 +1,30 @@
+.searchresults {
+    background-color: green;
+    align-items: left;
+    padding: 4px;
+    margin-bottom: 5px;
+}
+
+.resultlist {
+    background-color: none;
+}
+
+@resultlist
+
+@h1 below that is not working
+.yourparcels {
+    font-size: 100px;
+}
+
+.home-search p {
+    font-size: 15px;
+}
+
+@media only screen and (min-width: 500px) {
+}
+
+@media only screen and (min-width: 660px) {
+}
+
+@media only screen and (min-width: 900px) {
+}
