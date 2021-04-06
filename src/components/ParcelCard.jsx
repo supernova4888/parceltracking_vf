@@ -1,18 +1,20 @@
 import React from 'react'
 
-export default function ParcelCard ({item}) {
+// changes this from 'function' to const
+export const ParcelCard = ({item}) => {
     // Constants
-    const { title, completed } = item;
+    //const { title, completed } = item;
     
     return (
-        <div className="task-item">
+        <div className="parcel-card">
+            {/* {/* something wrong with this entire piece of code/} */}
             <h1>{item.parcel_id}</h1>
-            <p>{("parcelDetails.from")}: {item.sender} </p>
-			<p>{("parcelDetails.to")}: {item.user_name}</p>
-			<p>{("parcelDetails.pickupLocation")}: {item.location_name}</p>
-			<p>{("parcelDetails.eta")}: {item.eta}</p>
-			<p>Status: {`resultCards.status.${item.status}`}</p>
-            <p>{("parcelDetails.lastUpdated")}: {item.last_updated}</p>  
+            {/* <p>{("parcelCard.from")}: {item.sender} </p>
+			<p>{("parcelCard.to")}: {item.user_name}</p>
+			<p>{("parcelCard.pickupLocation")}: {item.location_name}</p>
+			<p>{("parcelCard.eta")}: {item.eta}</p>
+			<p>Status: {`parcelResult.status.${item.status}`}</p>
+            <p>{("parcelCard.lastUpdated")}: {item.last_updated}</p>   */}
         </div>
     )
 }

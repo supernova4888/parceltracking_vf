@@ -7,7 +7,6 @@ export default function FetchData ({match}) {
 const info = match.params.query;
 let parcelID = info.split(":")[1];
 const [status, setStatus] = useState(0);
-// const [data, setData] = useState([]);
 const [parcels, setParcels] = useState([]);
 
 // Constants
@@ -32,20 +31,17 @@ function onFetchFail(error){
 }
 
 const filteredList = parcels.filter(item => item )
+// why this map is here? where do we 'filter' the data
+const mappedFilteredList = filteredList.map(parcel => (<ParcelResult key ={parcel.id} item={parcel} />));
+
+console.log(filteredList);
 
     return (
-       <div>
-
-        {/* {status === 0 && <p> Loading... </p>}
-        {status === 1 && <Home data={parcels} />}
-        {status === 2 && <p> Error, please check your connection and try again... </p>}
-       */}
-        {filteredList.map(parcel => (
-        <ParcelResult key={parcel.id} item={parcel}/>
-	))}
-
-        
-        </div>
+    <div>
+        {status === 0 && <p> Loading... </p>}
+        {status === 1 && <p>{mappedFilteredList}</p>}
+        {status === 2 && <p> Error, please check your connection and try again... </p>}        
+    </div>
     );
     
 }

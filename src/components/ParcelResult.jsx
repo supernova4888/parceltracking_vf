@@ -20,9 +20,9 @@ export const ParcelResult = ({ item }) => {
         <div>
             <item>
 
-				<h1>{`resultCards.parcelID`}: {item.parcel_id}</h1>
-				<h2>Status: {`resultCards.status.${item.status}`}</h2>
-				<h2>{`resultCards.from`}: {item.sender}</h2>
+				<h1>{`parcelResult.parcelID`}: {item.parcel_id}</h1>
+				<h2>Status: {`parcelResult.status.${item.status}`}</h2>
+				<h2>{`parcelResult.from`}: {item.sender}</h2>
 			</item>
 
         {/* { !(findSearchedParcel === undefined) && <div>{findSearchedParcel.title}</div>}
@@ -30,6 +30,7 @@ export const ParcelResult = ({ item }) => {
         {findSearchedParcel === undefined && <div>Not Found</div>} */}
 
         {/* pull the card component and fill with the info and display */}
+        <ParcelCard item={item} />
 
         </div>
 
