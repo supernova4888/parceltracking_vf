@@ -1,5 +1,4 @@
 import React from 'react'
-import { ParcelCard } from "./ParcelCard";
 
 export const ParcelResult = ( {item, match} ) => {
 // code made to search for a specific parcel based on unique parcel ID. Since that data is not avaialable, the search parameter chosen is user name.
@@ -11,11 +10,11 @@ console.log("f",filteredList)
 
 // change from 'parcel' to 'item'
 const mappedFilteredList = filteredList.map(parcel => {
-    return (<div key={parcel.id}>
-    <p>{parcel.status}</p>
-    <p>{parcel.sender}</p>
-    <p>{parcel.eta.split("T")[0]}</p>
-    <p>{parcel.location_name}</p>
+    return (<div classaName="searchresults" key={parcel.id}>
+    <p className= "p-status">Status: {parcel.status}</p>
+    <p className= "p-sender">Sender: {parcel.sender}</p>
+    <p className= "p-eta">ETA: {parcel.eta.split("T")[0]}</p>
+    <p className= "p-location">Location: {parcel.location_name}</p>
     </div>)
 });
 
