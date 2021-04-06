@@ -1,9 +1,9 @@
 export const ParcelResult = ( {item, match} ) => {
-// code made to search for a specific parcel based on unique parcel ID. Since that data is not avaialable, the search parameter chosen is user name.
+// code made to search for a specific parcel based on unique parcel ID. Since unique parcel id data is not available, the search parameter chosen is user name.
 const userName = match.params.query
 console.log(item)
 console.log("userName:",userName)
-const filteredList = item.filter(item => item.user_name === userName )
+const filteredList = item.filter(item => item.user_name.toLowerCase() === userName.toLowerCase())
 console.log("f",filteredList)
 
 // change from 'parcel' to 'item'
